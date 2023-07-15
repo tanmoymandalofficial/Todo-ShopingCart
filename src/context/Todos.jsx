@@ -10,7 +10,6 @@ export const TodosProvider = (props)=>{
 
     const localTodo = JSON.parse(localStorage.getItem('newTodos')) || [];
     const [todos, setTodos] = useState(localTodo);
-    const [allTask, setAllTask] = useState(todos);
     
     const handleSetTodo = (task, description)=>{
 
@@ -25,9 +24,8 @@ export const TodosProvider = (props)=>{
             return newTodo;
         })
 
-        setAllTask(todos);
-        return;
     }
+
 
     const handleDelete = (id)=>{
         setTodos(prev => {
@@ -35,7 +33,6 @@ export const TodosProvider = (props)=>{
             return newVal;
         })
         
-        findDone();
     }
 
     const handleStatus = (id)=>{
@@ -49,27 +46,12 @@ export const TodosProvider = (props)=>{
             return newTasks;
         })
 
-       
-        findDone();
     }
 
-    const findPending = ()=>{
-        setAllTask(todos);
-        setAllTask(prev => {
-            const pending = prev.filter((task)=> task.status === false);
-            return pending;
-        })
-    }
-    const findDone = ()=>{
-        setAllTask(todos);
-        setAllTask(prev => {
-            const pending = prev.filter((task)=> task.status === true);
-            return pending;
-        })
-    }
+
 
     return(
-        <todosContext.Provider value={{todos, handleSetTodo, todos, handleDelete, handleStatus, findPending, findDone, allTask, setAllTask}} >
+        <todosContext.Provider value={{todos, handleSetTodo, todos, handleDelete, handleStatus, }} >
             {props.children}
         </todosContext.Provider>
     )

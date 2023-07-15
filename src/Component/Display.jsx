@@ -20,8 +20,8 @@ const Display = ({todos}) => {
                         <tr>
                             <td>{todo.task}</td>
                             <td>{todo.status? "Done" : "Pending"}</td>
-                            <td>Mark Done<input onChange={()=> {handleStatus(todo.id)}} checked={todo.status} type="checkbox" /></td>
-                            <td><button onClick={()=> {handleDelete(todo.id)} }>Delete</button></td>
+                            <td>Mark Done<input disabled={todo.status} onChange={()=> {handleStatus(todo.id)}} checked={todo.status} type="checkbox" /></td>
+                            <td ><button visible='false' onClick={()=> {handleDelete(todo.id)} }>Delete</button></td>
                         </tr>
                     )
                 })

@@ -33,7 +33,7 @@ const Cart = () => {
         </div>
         <div>
             <Link to='/shoping'>Products</Link>
-            <Link to='/cart'>Cart</Link>
+            <Link to='/cart'>Cart {cartProdect.length}</Link>
         </div>
         <div>
             <div>
