@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Foorter from '../Component/Foorter'
 
 const Contact = () => {
   return (
@@ -25,6 +26,7 @@ const Contact = () => {
           </div>
 
         </div>
+        <Foorter/>
     </div>
   )
 }

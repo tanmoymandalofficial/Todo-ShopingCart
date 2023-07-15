@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import Loding from '../Component/Loding';
+import Foorter from '../Component/Foorter';
 
 const Cart = () => {
 
@@ -19,6 +20,15 @@ const Cart = () => {
             const newVal = prev.filter(prod => prod.id !== id);
             return newVal;
         })
+    }
+    const handleOrder = ()=>{
+        if(total === 0){
+            alert("Your Cart is empty");
+            return;
+        }
+        alert("Your order has been placed");
+        setCartProdect([]);
+        localStorage.setItem('cartProduct', JSON.stringify([]));
     }
 
     localStorage.setItem('cartProduct', JSON.stringify(cartProdect));
@@ -38,17 +48,17 @@ const Cart = () => {
                 <Link className='rounded bg-amber-400 py-1 px-4 ' to='/cart'>Cart - {cartProdect.length}</Link>
             </div>
         </div>
-        <div>
-            <div>
+        <div className=' flex w-9/12 m-auto gap-10 my-10 min-h-screen'>
+            <div className=' w-9/12 '>
                 <table>
                 {   
                     cartProdect.map(product => {
                         return(
-                            <tr>
-                                <td><img src={product.image} alt="" /></td>
-                                <td><h3>{product.title}</h3></td>
-                                <td><h5>Price: ₹{product.price}</h5></td>
-                                <td><button onClick={()=> handleDelete(product.id)}>delete</button></td>
+                            <tr className=' flex justify-between w-full gap-5 my-3 shadow px-2'>
+                                <td className=' w-2/12'><img className=' h-20' src={product.image} alt="" /></td>
+                                <td className=' w-6/12'><h3>{product.title}</h3></td>
+                                <td className=' w-2/12'><h5>Price: ₹{product.price}</h5></td>
+                                <td className=' w-2/12 text-red-600 font-semibold'><button onClick={()=> handleDelete(product.id)}>Remove</button></td>
                             </tr>
                         )
                     })
@@ -56,10 +66,13 @@ const Cart = () => {
                 </table>
                 
             </div>
-            <div>
-
+            <div className=' w-3/12'>
+                <h2 className=' font-semibold text-2xl'><b>Total Amount:</b> <br /> ₹{total}</h2>
+                {/* <p>Delever to default Address</p> */}
+                <Link to='/shoping' className=' w-full text-center bg-orange-400 font-bold rounded-lg py-1 bottom-0 mt-3 block ' onClick={handleOrder}>Place Order</Link>
             </div>
         </div>
+        <Foorter/>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Foorter from '../Component/Foorter'
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
             </p>
             
         </div>
+        <Foorter/>
     </div>
   )
 }

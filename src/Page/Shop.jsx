@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import Loding from '../Component/Loding';
+import Foorter from '../Component/Foorter';
 
 const Shop = () => {
 
@@ -62,7 +63,7 @@ const Shop = () => {
                 <Link className='rounded bg-amber-400 py-1 px-4 ' to='/cart'>Cart - {cartProdect.length}</Link>
             </div>
         </div>
-        <div className=' container  w-10/12 m-auto gap-4 my-10 gap-y-6' style={{gridTemplateColumns:'repeat(4, 1fr)', display:'grid'}}>
+        <div className=' container  w-10/12 m-auto gap-4 my-10 gap-y-6 min-h-screen' style={{gridTemplateColumns:'repeat(4, 1fr)', display:'grid'}}>
             {/* <Loding/> */}
             {
                 // cartProdect.length === 0? <Loding/> :
@@ -80,7 +81,7 @@ const Shop = () => {
                 })
             }
         </div>
-        
+        <Foorter/>
     </div>
   )
 }

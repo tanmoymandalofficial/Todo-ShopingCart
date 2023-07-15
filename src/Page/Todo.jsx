@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTodos } from "../context/Todos";
 import Display from "../Component/Display";
+import Foorter from "../Component/Foorter";
 
 const Todo = () => {
   const [task, setTask] = useState("");
@@ -114,7 +115,7 @@ const Todo = () => {
         </div>
         
       </div>
-      
+      <Foorter/>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Foorter from '../Component/Foorter'
 
 const About = () => {
   return (
@@ -28,6 +29,7 @@ const About = () => {
                 Thank you for choosing our shopping website. We hope you have a delightful time exploring our extensive collection and find exactly what you're looking for. Happy shopping!
             </p>
         </div>
+        <Foorter/>
     </div>
   )
 }
