@@ -48,15 +48,17 @@ const Shop = () => {
 
   return (
     <div>
-        <h1>SHOP SMART </h1>
-        <h3>Your Ultimate Shopping Destination with a Todo List Feature</h3>
-        <div>
-            <Link to='/'>Back to Home</Link>
-            <Link to='/todo'>Explore Todo List</Link>
+        <h1  className=' text-center text-4xl font-bold mt-6 p-2  '>SHOP SMART </h1>
+        <h3 className=' text-center text-xs font-semibold'>Your Ultimate Shopping Destination with a Todo List Feature</h3>
+        <div className=' text-center p-5 my-5'>
+            <Link className=' rounded-full bg-blue-400 px-6 font-bold text-white py-3 mr-5' to='/'>Back to Home</Link>
+            <Link className=' rounded-full bg-orange-400 px-6 font-bold text-white py-3' to='/todo'>Explore Todo List</Link>
         </div>
-        <div>
-            <Link to='/shoping'>Products</Link>
-            <Link to='/cart'>Cart {cartProdect.length}</Link>
+        <div className=' flex justify-center bg-cyan-500  font-bold '>
+            <div className=' w-8/12 flex justify-end align-middle p-1'>
+                <Link className='mr-5 py-1 text-white' to='/shoping'>Products</Link>
+                <Link className='rounded bg-amber-400 py-1 px-4 ' to='/cart'>Cart - {cartProdect.length}</Link>
+            </div>
         </div>
         <div >
             {
