@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
+import Loding from '../Component/Loding';
 
 const Shop = () => {
 
@@ -32,6 +33,7 @@ const Shop = () => {
                 console.log(typeof(val));
                 if(val.length === 0){
                     const newVal = [product, ...prev];
+                    alert("Product is Added to Cart")
                     return newVal;
                 }else{
                     alert("Product is already present")
@@ -60,17 +62,19 @@ const Shop = () => {
                 <Link className='rounded bg-amber-400 py-1 px-4 ' to='/cart'>Cart - {cartProdect.length}</Link>
             </div>
         </div>
-        <div >
+        <div className=' container  w-10/12 m-auto gap-4 my-10 gap-y-6' style={{gridTemplateColumns:'repeat(4, 1fr)', display:'grid'}}>
+            {/* <Loding/> */}
             {
+                // cartProdect.length === 0? <Loding/> :
                 products.map(product => {
                     return(
-                        <div>
-                            <img src={product.image} alt="" />
-                            <p>Category: {product.category}</p>
-                            <h3>{product.title}</h3>
-                            <p>{product.description}</p>
-                            <h5>Price: ₹{product.price}</h5>
-                            <button onClick={()=> handleCart(product)}>Add to Cart</button>
+                        <div className=' shadow p-2'>
+                            <img className=' h-60 w-fit ' src={product.image} alt="" />
+                            <p className=' text-sm mb-2'><b>Category:</b> {product.category}</p>
+                            <h3 className=' font-semibold h-12 overflow-hidden' >{product.title}</h3>
+                            {/* <p>{product.description}</p>  */}
+                            <h5 className=' mt-4 text-xl'><b>Price:</b> ₹{product.price}</h5>
+                            <button className=' w-full text-center bg-orange-400 font-bold rounded-lg py-1 bottom-0 mt-3 ' onClick={()=> handleCart(product)}>Add to Cart</button>
                         </div>
                     )
                 })
