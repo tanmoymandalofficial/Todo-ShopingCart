@@ -14,7 +14,7 @@ const Contact = () => {
         <div className=' flex justify-center bg-cyan-500  font-bold '>
             <Link className=' py-3 px-6' to='/'>Home</Link>
             <Link className=' py-3 px-6'  to='/about'>About</Link>
-            <Link className=' py-3 px-6 text-white' to='/contact'>Contect</Link>
+            <Link className=' py-3 px-6 text-white' to='/contact'>Contact</Link>
         </div>
         <div className=' w-5/12 mx-auto my-10 p-12 text-center border rounded-sm bg-cyan-100 shadow-lg'>
           <h2 className=' text-2xl font-semibold mb-4'>Tanmoy Mondal</h2>
