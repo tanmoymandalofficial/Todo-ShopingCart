@@ -14,7 +14,7 @@ const Home = () => {
         <div className=' flex justify-center bg-cyan-500  font-bold '>
             <Link className=' py-3 px-6 text-white' to='/'>Home</Link>
             <Link className=' py-3 px-6' to='/about'>About</Link>
-            <Link className=' py-3 px-6' to='/contact'>Contect</Link>
+            <Link className=' py-3 px-6' to='/contact'>Contact</Link>
         </div>
         <div className=' container w-8/12 m-auto py-20 text-center'>
             <p className= ''>
