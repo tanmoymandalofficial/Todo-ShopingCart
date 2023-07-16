@@ -67,7 +67,7 @@ const Cart = () => {
                 
             </div>
             <div className=' w-3/12'>
-                <h2 className=' font-semibold text-2xl'><b>Total Amount:</b> <br /> ₹{total}</h2>
+                <h2 className=' font-semibold text-2xl'><b>Total Amount:</b> <br /> ₹{Math.round(total)}</h2>
                 {/* <p>Delever to default Address</p> */}
                 <Link to='/shoping' className=' w-full text-center bg-orange-400 font-bold rounded-lg py-1 bottom-0 mt-3 block ' onClick={handleOrder}>Place Order</Link>
             </div>
